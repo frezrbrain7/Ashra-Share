@@ -75,7 +75,7 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
-    void EatBread()
+    public void EatBread()
     {
         health.currentHealth = health.currentHealth + 2;
         currentBread = currentBread - 1;

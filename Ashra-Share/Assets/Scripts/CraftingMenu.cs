@@ -5,10 +5,13 @@ public class CraftingMenu : MonoBehaviour
 {
     public GameObject craftingMenu;
 
+    public UIManager uIManager;
+
     private bool menuOpen = false;
 
     void Start()
     {
+        uIManager = GetComponent<UIManager>();
         craftingMenu.SetActive(false);
     }
 
@@ -22,8 +25,13 @@ public class CraftingMenu : MonoBehaviour
 
     public void ToggleCraftingMenu()
     {
-        menuOpen = !menuOpen;
+        if (!uIManager.uiMenuOpen || menuOpen)
+        {
+            menuOpen = !menuOpen;
 
-        craftingMenu.SetActive(menuOpen);
+            craftingMenu.SetActive(menuOpen);
+
+            uIManager.CheckMenuOpen();
+        }
     }
 }

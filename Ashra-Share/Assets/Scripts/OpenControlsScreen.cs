@@ -7,8 +7,11 @@ public class OpenControlsScreen : MonoBehaviour
 
     private Transform player;
 
+    public UIManager uIManager;
+
     void Start()
     {
+        uIManager = GetComponent<UIManager>();
         openControlsScreen.SetActive(false);
     }
 
@@ -22,15 +25,21 @@ public class OpenControlsScreen : MonoBehaviour
 
     public void OpenCtrlScreen()
     {
-        openControlsScreen.SetActive(true);
-        Time.timeScale = 0f;
-        /*if (menuOpen = true)
+        if (!uIManager.uiMenuOpen)
         {
+            openControlsScreen.SetActive(true);
             Time.timeScale = 0f;
+
+            uIManager.CheckMenuOpen();
+            /*if (menuOpen = true)
+            {
+                Time.timeScale = 0f;
+            }
+            else if (menuOpen = false)
+            {
+                Time.timeScale = 1f;
+            }*/
         }
-        else if (menuOpen = false)
-        {
-            Time.timeScale = 1f;
-        }*/
+
     }
 }

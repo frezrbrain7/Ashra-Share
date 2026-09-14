@@ -8,6 +8,8 @@ public class ShopMenu : MonoBehaviour
     public float openShopRadius = 10f;
     public GameObject shopPrompt;
 
+    public UIManager uIManager;
+
     //public GameObject shopBtn;
 
     private bool menuOpen = false;
@@ -16,6 +18,8 @@ public class ShopMenu : MonoBehaviour
 
     void Start()
     {
+        uIManager = GetComponent<UIManager>();
+
         shopMenu.SetActive(false);
         shopMenuClosed.SetActive(false);
         shop = GameObject.FindGameObjectWithTag("Shop").transform;
@@ -55,15 +59,19 @@ public class ShopMenu : MonoBehaviour
 
     public void ToggleShopMenu()
     {
-        if (shopOpen)
+        if (!uIManager.uiMenuOpen)
         {
-            menuOpen = !menuOpen;
-            shopMenu.SetActive(menuOpen);
+            if (shopOpen)
+            {
+                menuOpen = !menuOpen;
+                shopMenu.SetActive(menuOpen);
+            }
+            else
+            {
+                menuOpen = !menuOpen;
+                shopMenuClosed.SetActive(menuOpen);
+            }
         }
-        else
-        {
-            menuOpen = !menuOpen;
-            shopMenuClosed.SetActive(menuOpen);
-        }
+        
     }
 }
