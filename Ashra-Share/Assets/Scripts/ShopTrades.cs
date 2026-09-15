@@ -2,10 +2,13 @@ using UnityEngine;
 
 public class ShopTrades : MonoBehaviour
 {
-    public PlayerWheat playerWheat;
+    /*public PlayerWheat playerWheat;
     public PlayerStone playerStone;
     public PlayerWood playerWood;
-    public PlayerCoins playerCoins;
+    public PlayerCoins playerCoins;*/
+
+    public PlayerInv playerInv;
+
     public PlayerHealth playerHealth;
 
     public void PurchaseBread()
@@ -13,9 +16,9 @@ public class ShopTrades : MonoBehaviour
         int coinCost = 10;
         int breadReward = 7;
 
-        if (playerCoins.HasCoins(coinCost))
+        if (playerInv.HasItem(coinCost, ItemType.Coin))
         {
-            playerCoins.RemoveCoins(coinCost);
+            playerInv.RemoveItem(coinCost, ItemType.Coin); 
             playerHealth.AddBread(breadReward);
 
             Debug.Log("Purchesed Bread");
@@ -33,9 +36,9 @@ public class ShopTrades : MonoBehaviour
         int coinCost = 18;
         string stoneSwordReward = "Stone";
 
-        if (playerCoins.HasCoins(coinCost))
+        if (playerInv.HasItem(coinCost, ItemType.Coin)) 
         {
-            playerCoins.RemoveCoins(coinCost);
+            playerInv.RemoveItem(coinCost, ItemType.Coin); 
             playerHealth.AddStoneSword(stoneSwordReward);
 
             Debug.Log("Crafted a Stone Sword!");
@@ -51,10 +54,10 @@ public class ShopTrades : MonoBehaviour
         int wheatCost = 10;
         int coinReward = 14;
 
-        if (playerWheat.HasWheat(wheatCost))
+        if (playerInv.HasItem(wheatCost, ItemType.Wheat))
         {
-            playerWheat.RemoveWheat(wheatCost);
-            playerCoins.AddCoins(coinReward);
+            playerInv.RemoveItem(wheatCost, ItemType.Wheat);
+            playerInv.AddItem(coinReward, ItemType.Coin);
 
             Debug.Log("Purchesed Coin from Wheat");
         }
@@ -69,10 +72,10 @@ public class ShopTrades : MonoBehaviour
         int woodCost = 10;
         int coinReward = 13;
 
-        if (playerWood.HasWood(woodCost))
+        if (playerInv.HasItem(woodCost, ItemType.Wood))
         {
-            playerWood.RemoveWood(woodCost);
-            playerCoins.AddCoins(coinReward);
+            playerInv.RemoveItem(woodCost, ItemType.Wood);
+            playerInv.AddItem(coinReward, ItemType.Coin);
 
             Debug.Log("Purchesed Coin from Wood");
         }
@@ -87,16 +90,16 @@ public class ShopTrades : MonoBehaviour
         int stoneCost = 10;
         int coinReward = 15;
 
-        if (playerStone.HasStone(stoneCost))
+        if (playerInv.HasItem(stoneCost, ItemType.Stone))
         {
-            playerStone.RemoveStone(stoneCost);
-            playerCoins.AddCoins(coinReward);
+            playerInv.RemoveItem(stoneCost, ItemType.Stone);
+            playerInv.AddItem(coinReward, ItemType.Coin);
 
             Debug.Log("Purchesed Coin from Stone");
         }
         else
         {
-            Debug.Log("Not enough wood!");
+            Debug.Log("Not enough stone!");
         }
     }
 }

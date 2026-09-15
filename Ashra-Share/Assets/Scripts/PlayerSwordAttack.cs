@@ -11,15 +11,10 @@ public class PlayerSwordAttack : MonoBehaviour
     public float stoneAttackWidth = 1.4f;
     public int stoneDamage = 20;
     public float stoneAttackCooldown = 0.6f;
-    [Header("Attack Sound")]
-    public AudioClip AttackClip;
-    [Range(0f, 1f)] public float AttackVolume = 1f;
-
     private float nextAttackTime = 0f;
     private Vector2 moveDir;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
-    private AudioSource attackAudioSource;
 
     private float attackRange;
     private float attackWidth;
@@ -35,10 +30,6 @@ public class PlayerSwordAttack : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        attackAudioSource = gameObject.AddComponent<AudioSource>();
-        attackAudioSource.playOnAwake = false;
-        attackAudioSource.loop = false;
-        attackAudioSource.spatialBlend = 0f;
 
         playerHealth = GetComponent<PlayerHealth>();
 
@@ -109,9 +100,6 @@ public class PlayerSwordAttack : MonoBehaviour
                 animator.SetTrigger("WoodSwordAttack");
                 nextAttackTime = Time.time + attackCooldown;
             }
-
-            if (AttackClip != null)
-                attackAudioSource.PlayOneShot(AttackClip, AttackVolume);
         }
     }
 

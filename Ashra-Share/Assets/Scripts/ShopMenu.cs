@@ -15,6 +15,7 @@ public class ShopMenu : MonoBehaviour
     private bool menuOpen = false;
     private bool shopOpen = false;
     private Transform shop;
+    public Transform playerTransform;
 
     void Start()
     {
@@ -28,7 +29,7 @@ public class ShopMenu : MonoBehaviour
     void Update()
     {
         float distanceToShop =
-            Vector2.Distance(transform.position, shop.position);
+            Vector2.Distance(playerTransform.position, shop.position);
 
         bool playerNearShop =
             distanceToShop <= openShopRadius;
@@ -41,6 +42,7 @@ public class ShopMenu : MonoBehaviour
             menuOpen = false;
             shopMenu.SetActive(false);
             shopMenuClosed.SetActive(false);
+            uIManager.CheckMenuOpen();
             //Set shop button to active
         }
 
@@ -72,6 +74,6 @@ public class ShopMenu : MonoBehaviour
                 shopMenuClosed.SetActive(menuOpen);
             }
         }
-        
+        uIManager.CheckMenuOpen();
     }
 }

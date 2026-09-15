@@ -98,7 +98,7 @@ public class PlayerInv : MonoBehaviour
         }
     }
 
-    public void RemoveCoins(int amount, ItemType type)
+    public void RemoveItem(int amount, ItemType type)
     {
         switch (type)
         {
