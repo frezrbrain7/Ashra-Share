@@ -7,7 +7,7 @@ public class WheatPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Something touched wheat: " + other.name);
+        //Debug.Log("Something touched wheat: " + other.name);
 
         if (other.CompareTag("ItemPickup"))
         {

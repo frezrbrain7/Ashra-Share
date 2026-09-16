@@ -3,8 +3,10 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int maxHealth = 50;
-    public int currentHealth;
+    public Health health;
+
+    //public int maxHealth = 50;
+    //public int currentHealth;
     public Slider healthBar;
     
     public GameObject coinPrefab;
@@ -25,31 +27,22 @@ public class EnemyHealth : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
         UpdateHealthBar();
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage()
     {
-        currentHealth -= damage;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-
         UpdateHealthBar();
 
         Debug.Log(gameObject.name + " took damage!");
-
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
     }
 
     void UpdateHealthBar()
     {
-        healthBar.value = (float)currentHealth / maxHealth;
+        healthBar.value = (float)health.currentHealth / health.maxHealth;
     }
 
-    void Die()
+    public void Die()
     {
         DropCoins();
         DropWheat();

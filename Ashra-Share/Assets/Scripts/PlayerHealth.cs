@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int startHealth = 100;
-    public int maxHealth = 200;
-    public int currentHealth;
+    //public int startHealth = 100;
+    //public int maxHealth = 200;
+    //public int currentHealth;
     public TextMeshProUGUI healthText;
     public int maxNatRegenHealth = 120;
     public float natRegenTime = 5f;
     public float natRegenCooldown = 15f;
+
+    public Health health;
 
     public int startingBread = 50;
     public int currentBread;
@@ -36,7 +38,6 @@ public class PlayerHealth : MonoBehaviour
     {
         deathScreen.SetActive(false);
 
-        currentHealth = startHealth;
         currentBread = startingBread;
         currentSword = "Wood";
         UpdateUI();
@@ -48,7 +49,7 @@ public class PlayerHealth : MonoBehaviour
         {
             RegenHealth();
         }
-        if ((Keyboard.current.eKey.isPressed) && (currentBread > 0) && (currentHealth <= maxHealth) && (Time.time >= nextEatTime))
+        if ((Keyboard.current.eKey.isPressed) && (currentBread > 0) && (health.currentHealth <= health.maxHealth) && (Time.time >= nextEatTime))
         {
             nextEatTime =
                 Time.time + eatingCooldown;
@@ -64,9 +65,9 @@ public class PlayerHealth : MonoBehaviour
 
     void RegenHealth()
     {
-        if (currentHealth < maxNatRegenHealth) 
+        if (health.currentHealth < maxNatRegenHealth) 
         {
-            currentHealth = currentHealth + 1;
+            health.currentHealth += 1;
         }
         UpdateUI();
 
@@ -74,9 +75,9 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
-    void EatBread()
+    public void EatBread()
     {
-        currentHealth = currentHealth + 2;
+        health.currentHealth = health.currentHealth + 2;
         currentBread = currentBread - 1;
         UpdateUI();
     }
@@ -93,20 +94,13 @@ public class PlayerHealth : MonoBehaviour
         UpdateUI();
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage()
     {
-        currentHealth -= damage;
-        currentHealth = Mathf.Clamp(currentHealth, 0, startHealth);
         nextNatRegenTime = Time.time + natRegenCooldown;
 
         UpdateUI();
 
         Debug.Log(gameObject.name + " took damage!");
-
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
     }
 
     public void setBanditsRemaining(int amount)
@@ -117,15 +111,15 @@ public class PlayerHealth : MonoBehaviour
 
     void UpdateUI()
     {
-        healthText.text = "Health: " + currentHealth;
+        healthText.text = "Health: " + health.currentHealth;
         breadText.text = "Bread: " + currentBread;
         swordCheckText.text = "Sword Type: " + currentSword;
         banditRemainingText.text = "Bandits Remaining: " + banditRemaining;
     }
 
-    void Die()
+    public void Die()
     {
-        currentHealth = 0;
+        health.currentHealth = 0;
         UpdateUI();
         Time.timeScale = 0f;
         deathScreen.SetActive(true);

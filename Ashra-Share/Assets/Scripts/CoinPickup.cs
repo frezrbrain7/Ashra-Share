@@ -5,9 +5,10 @@ public class CoinPickup : MonoBehaviour
     public int minCoinValue = 1;
     public int maxCoinValue = 5;
 
+    public ItemType coinType = ItemType.Coin;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Something touched coin: " + other.name);
+        //Debug.Log("Something touched coin: " + other.name);
 
         if (other.CompareTag("ItemPickup"))
         {

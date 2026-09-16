@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
             GameObject.FindGameObjectsWithTag("Enemy").Length;
         playerHealth.setBanditsRemaining(banditsRemaining);
 
-        Debug.Log("Bandits at start: " + banditsRemaining);
+        //Debug.Log("Bandits at start: " + banditsRemaining);
 
         winScreen.SetActive(false);
         startScreen.SetActive(true);
@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
 
         playerHealth.setBanditsRemaining(banditsRemaining);
 
-        Debug.Log("Bandits remaining: " + banditsRemaining);
+        //Debug.Log("Bandits remaining: " + banditsRemaining);
 
         if (banditsRemaining <= 0)
         {
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
 
     void WinGame()
     {
-        Debug.Log("YOU WIN!");
+        //Debug.Log("YOU WIN!");
 
         winScreen.SetActive(true);
 

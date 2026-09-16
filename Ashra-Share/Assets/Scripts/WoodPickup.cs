@@ -7,7 +7,7 @@ public class WoodPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Something touched Wood: " + other.name);
+        //Debug.Log("Something touched Wood: " + other.name);
 
         if (other.CompareTag("ItemPickup"))
         {

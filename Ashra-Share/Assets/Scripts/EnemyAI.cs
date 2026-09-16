@@ -138,12 +138,12 @@ public class EnemyAI : MonoBehaviour
     
     public void DealAttackDamage()
     {
-        Debug.Log("Bandit dealt damage!");
+        //Debug.Log("Bandit dealt damage!");
 
-        PlayerHealth health =
-            player.GetComponent<PlayerHealth>();
+        Health health =
+            player.GetComponent<Health>();
 
-        Debug.Log("Health component found: " + (health != null));
+        //Debug.Log("Health component found: " + (health != null));
 
         health?.TakeDamage(damage);
     }
