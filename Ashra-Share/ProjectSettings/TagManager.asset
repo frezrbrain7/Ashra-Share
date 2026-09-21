@@ -48,8 +48,14 @@ TagManager:
   - name: Background
     uniqueID: 586035307
     locked: 0
+  - name: Background 2
+    uniqueID: 3794577809
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Above Ground Tiles
+    uniqueID: 1174891895
     locked: 0
   - name: Ui
     uniqueID: 2036337125
