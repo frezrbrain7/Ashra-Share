@@ -22,6 +22,13 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        PlayerSwordAttack playerSwordAttack = GetComponent<PlayerSwordAttack>();
+        if (playerSwordAttack != null && playerSwordAttack.IsBlocking)
+        {
+            DamageTaken.Invoke();
+            return;
+        }
+
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, startHealth);
 

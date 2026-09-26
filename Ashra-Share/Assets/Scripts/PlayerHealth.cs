@@ -32,11 +32,13 @@ public class PlayerHealth : MonoBehaviour
     private float nextNatRegenTime = 5f;
 
     private Transform player;
+    private PlayerSwordAttack playerSwordAttack;
 
 
     void Start()
     {
         deathScreen.SetActive(false);
+        playerSwordAttack = GetComponent<PlayerSwordAttack>();
 
         currentBread = startingBread;
         currentSword = "Wood";
@@ -96,6 +98,12 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage()
     {
+        if (playerSwordAttack != null && playerSwordAttack.IsBlocking)
+        {
+            Debug.Log(gameObject.name + " blocked damage!");
+            return;
+        }
+
         nextNatRegenTime = Time.time + natRegenCooldown;
 
         UpdateUI();
