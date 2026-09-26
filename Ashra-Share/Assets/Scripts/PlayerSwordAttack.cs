@@ -25,6 +25,7 @@ public class PlayerSwordAttack : MonoBehaviour
     private PlayerHealth playerHealth;
 
     public LayerMask enemyLayer;
+    public bool IsBlocking { get; private set; }
 
     void Start()
     {
@@ -46,6 +47,8 @@ public class PlayerSwordAttack : MonoBehaviour
 
     void Update()
     {
+        IsBlocking = Mouse.current != null && Mouse.current.rightButton.isPressed;
+        animator.SetBool("IsBlocking", IsBlocking);
 
         if (playerHealth.HasStoneSword("Stone"))
         {
@@ -64,7 +67,7 @@ public class PlayerSwordAttack : MonoBehaviour
         }
 
 
-        if (Mouse.current.leftButton.wasPressedThisFrame && CanAttack())
+        if (!IsBlocking && Mouse.current.leftButton.wasPressedThisFrame && CanAttack())
         {
             Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
 

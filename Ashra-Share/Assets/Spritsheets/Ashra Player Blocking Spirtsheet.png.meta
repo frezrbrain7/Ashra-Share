@@ -1,0 +1,111 @@
+fileFormatVersion: 2
+guid: 9d63a8e4f7a14f94b3d4ab6f5c2e1a90
+TextureImporter:
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+  textureType: 8
+  spriteMode: 2
+  pixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ashra Player Blocking Spirtsheet_0
+      rect: {serializedVersion: 2, x: 104, y: 1019, width: 168, height: 257}
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      spriteID: 00000000000000000000000000000001
+      internalID: 1000000001
+    - serializedVersion: 2
+      name: Ashra Player Blocking Spirtsheet_1
+      rect: {serializedVersion: 2, x: 424, y: 1019, width: 192, height: 257}
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      spriteID: 00000000000000000000000000000002
+      internalID: 1000000002
+    - serializedVersion: 2
+      name: Ashra Player Blocking Spirtsheet_2
+      rect: {serializedVersion: 2, x: 744, y: 1019, width: 202, height: 257}
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      spriteID: 00000000000000000000000000000003
+      internalID: 1000000003
+    - serializedVersion: 2
+      name: Ashra Player Blocking Spirtsheet_3
+      rect: {serializedVersion: 2, x: 104, y: 699, width: 178, height: 257}
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      spriteID: 00000000000000000000000000000004
+      internalID: 1000000004
+    - serializedVersion: 2
+      name: Ashra Player Blocking Spirtsheet_4
+      rect: {serializedVersion: 2, x: 424, y: 699, width: 192, height: 257}
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      spriteID: 00000000000000000000000000000005
+      internalID: 1000000005
+    - serializedVersion: 2
+      name: Ashra Player Blocking Spirtsheet_5
+      rect: {serializedVersion: 2, x: 744, y: 699, width: 202, height: 257}
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      spriteID: 00000000000000000000000000000006
+      internalID: 1000000006
+    - serializedVersion: 2
+      name: Ashra Player Blocking Spirtsheet_6
+      rect: {serializedVersion: 2, x: 104, y: 379, width: 188, height: 257}
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      spriteID: 00000000000000000000000000000007
+      internalID: 1000000007
+    - serializedVersion: 2
+      name: Ashra Player Blocking Spirtsheet_7
+      rect: {serializedVersion: 2, x: 424, y: 379, width: 192, height: 257}
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      spriteID: 00000000000000000000000000000008
+      internalID: 1000000008
+    - serializedVersion: 2
+      name: Ashra Player Blocking Spirtsheet_8
+      rect: {serializedVersion: 2, x: 744, y: 379, width: 168, height: 257}
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      spriteID: 00000000000000000000000000000009
+      internalID: 1000000009
+    - serializedVersion: 2
+      name: Ashra Player Blocking Spirtsheet_9
+      rect: {serializedVersion: 2, x: 104, y: 59, width: 162, height: 257}
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      spriteID: 0000000000000000000000000000000a
+      internalID: 1000000010
+    - serializedVersion: 2
+      name: Ashra Player Blocking Spirtsheet_10
+      rect: {serializedVersion: 2, x: 424, y: 59, width: 162, height: 257}
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      spriteID: 0000000000000000000000000000000b
+      internalID: 1000000011
+    - serializedVersion: 2
+      name: Ashra Player Blocking Spirtsheet_11
+      rect: {serializedVersion: 2, x: 744, y: 59, width: 162, height: 257}
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      spriteID: 0000000000000000000000000000000c
+      internalID: 1000000012
+    nameFileIdTable:
+      Ashra Player Blocking Spirtsheet_0: 1000000001
+      Ashra Player Blocking Spirtsheet_1: 1000000002
+      Ashra Player Blocking Spirtsheet_2: 1000000003
+      Ashra Player Blocking Spirtsheet_3: 1000000004
+      Ashra Player Blocking Spirtsheet_4: 1000000005
+      Ashra Player Blocking Spirtsheet_5: 1000000006
+      Ashra Player Blocking Spirtsheet_6: 1000000007
+      Ashra Player Blocking Spirtsheet_7: 1000000008
+      Ashra Player Blocking Spirtsheet_8: 1000000009
+      Ashra Player Blocking Spirtsheet_9: 1000000010
+      Ashra Player Blocking Spirtsheet_10: 1000000011
+      Ashra Player Blocking Spirtsheet_11: 1000000012
