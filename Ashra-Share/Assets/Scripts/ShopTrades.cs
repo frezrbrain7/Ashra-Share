@@ -11,6 +11,9 @@ public class ShopTrades : MonoBehaviour
 
     public PlayerHealth playerHealth;
 
+    [SerializeField] private Transform healthTotemSpawn, shieldTotemSpawn;
+    [SerializeField] private GameObject healthTotem, shieldTotem;
+
     public void PurchaseBread()
     {
         int coinCost = 10;
@@ -101,5 +104,47 @@ public class ShopTrades : MonoBehaviour
         {
             Debug.Log("Not enough stone!");
         }
+    }
+
+    public void PurchaseHealthTotem()
+    {
+        int coinCost = 50;
+
+        if (playerInv.HasItem(coinCost, ItemType.Coin))
+        {
+            playerInv.RemoveItem(coinCost, ItemType.Stone);
+
+            Instantiate(healthTotem, healthTotemSpawn.position, Quaternion.identity);
+
+            Debug.Log("Purchesed Health totem from Coins");
+        }
+        else
+        {
+            Debug.Log("Not enough coins!");
+        }
+
+
+        Debug.Log("Health Totem Purchased");
+    }
+
+    public void PurchaseShieldTotem()
+    {
+        int coinCost = 50;
+
+        if (playerInv.HasItem(coinCost, ItemType.Coin))
+        {
+            playerInv.RemoveItem(coinCost, ItemType.Stone);
+
+            Instantiate(shieldTotem, shieldTotemSpawn.position, Quaternion.identity);
+
+            Debug.Log("Purchesed Shield totem from Coins");
+        }
+        else
+        {
+            Debug.Log("Not enough coins!");
+        }
+
+
+        Debug.Log("Shield Totem Purchased");
     }
 }

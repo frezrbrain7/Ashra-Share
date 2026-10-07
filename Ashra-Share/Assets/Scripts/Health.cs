@@ -25,8 +25,8 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        PlayerSwordAttack playerSwordAttack = GetComponent<PlayerSwordAttack>();
-        if (playerSwordAttack != null && playerSwordAttack.IsBlocking)
+        PlayerAttackUpdate PlayerAttackUpdate = GetComponent<PlayerAttackUpdate>(); 
+        if (PlayerAttackUpdate != null && PlayerAttackUpdate.IsBlocking)
         {
             DamageTaken.Invoke();
             return;
