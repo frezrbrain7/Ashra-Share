@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: -2675539487894488303}
   - component: {fileID: 8719886647204428697}
   - component: {fileID: -6227199490139161273}
+  - component: {fileID: 8437466770731769232}
+  - component: {fileID: 7836170573605751718}
   m_Layer: 0
   m_Name: PlayerTest
   m_TagString: Untagged
@@ -203,3 +205,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::movementTest
   moveSpeed: 4
+  running: 9
+--- !u!114 &8437466770731769232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626591190834450865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb13d874f12d56244a7bbd51cc7ff86b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  healthText: {fileID: 0}
+  maxNatRegenHealth: 120
+  natRegenTime: 5
+  natRegenCooldown: 15
+  health: {fileID: 0}
+  startingBread: 50
+  currentBread: 0
+  breadText: {fileID: 0}
+  eatingCooldown: 0.5
+  deathScreen: {fileID: 0}
+  swordCheckText: {fileID: 0}
+  banditRemainingText: {fileID: 0}
+  swordType: Wood
+--- !u!114 &7836170573605751718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626591190834450865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d0866a67b43d24096e6d9cf1f1efbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSwordAttack
+  woodAttackRange: 1.5
+  woodAttackWidth: 1
+  woodDamage: 10
+  woodAttackCooldown: 0.4
+  stoneAttackRange: 1.8
+  stoneAttackWidth: 1.4
+  stoneDamage: 20
+  stoneAttackCooldown: 0.6
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
